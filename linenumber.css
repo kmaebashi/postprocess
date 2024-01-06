@@ -1,0 +1,26 @@
+table.linenumbertable {
+  margin-left: 2em;
+  background: #ccffff;
+  border-right: solid 1px #99cccc;
+  border-bottom: solid 1px #99cccc;
+}
+
+table.linenumbertable pre {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+td.linenumber-left-td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 3px;
+  border: none;
+  color: #0000ff;
+}
+
+td.linenumber-right-td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+  border: none;
+}

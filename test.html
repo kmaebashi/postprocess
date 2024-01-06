@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" title="default" type="text/css" href="linenumber.css">
+<title>postprocess.jsテスト用HTML</title>
+</head>
+<body>
+<h1>postprocess.jsテスト用HTML</h1>
+<p>このHTMLは、postprocess.jsの挙動を確認するためのものです。</p>
+<p>ではここで、アドレス演算子`&`を使用して、変数hoge<sup><a href="#hoge">※1</a></sup>のアドレスを取得してみます。</p>
+<p>上の文章の「※1」のところをマウスオーバーすることで、脚注の内容が表示されたかと思います。</p>
+<p>また、以下のプログラムには、行番号が付与されていると思います。</p>
+<p>具体的な使い方はHTMLソースを参照してください。</p>
+<pre class="linenumber">
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int     hoge = 5;
+    int     piyo = 10;
+    int     *hoge_p;
+
+    /* それぞれの変数のアドレスを表示する */
+    printf(&quot;&amp;hoge..%p\n&quot;, (void*)&amp;hoge);
+    printf(&quot;&amp;piyo..%p\n&quot;, (void*)&amp;piyo);
+    printf(&quot;&amp;hoge_p..%p\n&quot;, (void*)&amp;hoge_p);
+
+    /* ポインタ変数hoge_pにhogeのアドレスを代入する */
+    hoge_p = &amp;hoge;
+    printf(&quot;hoge_p..%p\n&quot;, (void*)hoge_p);
+
+    /* hoge_pを経由してhogeの値を表示する */
+    printf(&quot;*hoge_p..%d\n&quot;, *hoge_p);
+
+    /* hoge_pを経由してhogeの値を変更する */
+    *hoge_p = 10;
+    printf(&quot;hoge..%d\n&quot;, hoge);
+
+    return 0;
+}
+</pre>
+<p>このプログラムは、拙著「C言語ポインタ完全制覇」(改訂版)のList1-4 pointer.c(p.44)からの抜粋です。</p>
+<p>以下の空行は、※1のクリックで脚注にジャンプできることを示すためのものです。</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<hr>
+<ul class="footnote">
+<li><a name="hoge">※1</a> 「hoge」というのは、サンプルプログラム等で「何の意味もない名前」であることを示すために使われる名前のひとつです。詳細は<a href="https://kmaebashi.com/programmer/hoge.html">ほげを考えるページ</a>を参照してください。
+</ul>
+<script src="./postprocess.js"></script>
+</body>
+</html>
