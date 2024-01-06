@@ -42,3 +42,9 @@ int main(int argc, char **argv)
 </pre>
 ```
 `<\pre>`内に記述されているコードは、HTMLのエスケープが事前に行われている前提です(上記hello, worldの「`#include <stdio.h>`」を参照のこと)。
+これで生成されるコードブロックは、1行2列の`<table>`要素であり、左の`<td>`に行番号が、右の`<td>`にソースが入れられています。以下のclass属性が付与されているので、見た目はCSSでいじってください。サンプルのlinenumber.cssも添付してあります。
+| 要素 | class属性 |
+| ---- | ---- |
+| table全体 | linenumbertable |
+| 左のpre | linenumber-left-td |
+| 右のpre | linenumber-right-td |
